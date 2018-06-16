@@ -1,4 +1,4 @@
-const defaults = {
+const default_settings = {
   errorOnUnknown: true,
   caseSensitive: true,
   negationPrefix: true,
@@ -6,7 +6,7 @@ const defaults = {
   supportDuplicates: false,
 };
 
-const option_format = {
+const option_definition_format = {
   short: 'a',
   long: 'always',
   list: false,
@@ -15,7 +15,13 @@ const option_format = {
   default: undefined
 };
 
+const option_storage_format = {
+  value: '',
+  isUnknown: false,
+};
+
 module.exports = {
-  defaults,
-  option_format,
+  default_settings,
+  option_definition_format,
+  option_storage_format,
 };

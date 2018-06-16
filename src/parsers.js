@@ -1,3 +1,7 @@
+/**
+ * Options parsers.
+ */
+
 const parsers = {
   range: val => val.split('..').map(Number),
   list: val => val.split(','),

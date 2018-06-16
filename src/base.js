@@ -17,8 +17,10 @@ const processOption = ({ optionSet, opt, value, config={}, result={} }) => {
 
  if (!optionExists(optionSet, opt)) {
    if (config.errorOnUnknown === true) {
-
+    throw new Error(`Unknown option: ${opt}`);
    }
+
+   // TODO:
  }
 };
 
