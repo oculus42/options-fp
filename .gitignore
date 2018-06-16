@@ -62,3 +62,6 @@ typings/
 
 # Dev Tools Cruft
 .idea
+
+# Apple file system cruft
+.DS*
