@@ -1,3 +1,5 @@
+const parsers = require('./parsers');
+
 const isOption = el => el[0] === '-' && el.length > 1 && /^--?[^-]/.test(el);
 const makeNegationPredicate = prefix => el => el.indexOf(prefix) === 0;
 const hasNegationPrefix = makeNegationPredicate('--no-');
@@ -20,15 +22,6 @@ const processOption = ({ optionSet, opt, value, config={}, result={} }) => {
  }
 };
 
-
-const parsers = {
-  range: val => val.split('..').map(Number),
-  list: val => val.split(','),
-  collect: (val, list) => [...list, val],
-  increment: (val, total) => total + 1,
-};
-
-
 module.exports = {
   isOption,
   makeNegationPredicate,
@@ -36,6 +29,4 @@ module.exports = {
   optionExists,
   optionHasArgs,
   followsOption,
-
-  parsers,
 };
