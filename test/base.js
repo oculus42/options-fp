@@ -42,8 +42,8 @@ options = {
     list: false,
     hasArg: true,
     argParser: a => a,
-    default: undefined
-  }
+    default: undefined,
+  },
 };
 args = ['--foo', 42];
 
@@ -55,8 +55,8 @@ options = {
     list: false,
     hasArg: false,
     argParser: a => a,
-    default: undefined
-  }
+    default: undefined,
+  },
 };
 args = ['--foo', 'yes', '--bar'];
 
@@ -68,4 +68,4 @@ assert.deepEqual(args.map(fopt.followsOption), [false, true, false, true]);
 
 
 // Complete
-console.log("All tests passed.");
+console.log('All tests passed.');

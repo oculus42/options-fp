@@ -1,4 +1,4 @@
-const default_settings = {
+const defaultSettings = {
   errorOnUnknown: true,
   caseSensitive: true,
   negationPrefix: true,
@@ -6,22 +6,37 @@ const default_settings = {
   supportDuplicates: false,
 };
 
-const option_definition_format = {
-  short: 'a',
-  long: 'always',
+// TODO: Creating reasonable defaults for unknown options
+// This is going to be the most complex portion, I suspect.
+const defaultOptionSettings = {
   list: false,
   hasArg: true,
   argParser: a => a,
-  default: undefined
+  default: undefined,
+  negatable: true,
 };
 
-const option_storage_format = {
+const formatOptionDefinition = {
+  short: 'a',
+  long: 'always',
+  list: false,
+  negatable: false,
+  hasArg: true,
+  argParser: a => a,
+  default: undefined,
+};
+
+const formatOptionStorage = {
+  rawOption: '',
+  rawValue: '',
   value: '',
-  isUnknown: false,
+  isNegated: false,
+  isUnknownOption: false,
 };
 
 module.exports = {
-  default_settings,
-  option_definition_format,
-  option_storage_format,
+  defaultSettings,
+  defaultOptionSettings,
+  formatOptionDefinition,
+  formatOptionStorage,
 };
